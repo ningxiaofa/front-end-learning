@@ -1,0 +1,80 @@
+#content {
+
+    .container {
+
+        #new-content {
+
+            div {
+                // Resets margin/padding
+                padding: 0px;
+                margin: 0px; 
+            }
+
+            .row.t-header {
+                font-family: HelveticaNeue-Bold;
+
+                border: solid 1px #34495e;
+                background: #FFF;
+
+                .upper {
+                    background:#16a085;
+
+                    div {
+                        padding-left: 12px; // Align the left side vertically
+                    }
+                }
+
+                .under {
+                    background: #f39c12;
+                }
+
+                .first-col-under {
+                    padding-left: 12px; // Align the left side vertically
+                    // background:#bdc3c7;
+
+                    .invoice-no {
+                        font-size: 12px;
+                        line-height: 1.5;
+
+                        font-family: HelveticaNeue;
+                        color: #666;
+                        letter-spacing: 0;
+                    }
+
+                    :first-child {
+                        margin-bottom: 4px;
+                    }
+                }
+            }
+
+            .row.credit-info {
+                // background: #16a085;
+                background: #FFF;  // The final background color
+                margin-bottom: 8px;
+                
+                // 主要用于快速实现效果
+                [class*=col-] {
+                    border: dotted 1px green;
+                }
+
+                // .credit-info-header,
+                // .credit-info-body {
+                    
+                //     div {
+                //         &:nth-child(1) {
+                //             // background: #f39c12;
+                //             // width: 148px;
+                //             // width: 152px;
+                //             padding-left: 12px;
+                //         }
+                //     }
+                // }
+
+                // .credit-info-body {
+                //     padding-left: 20px;
+                // }
+
+            }
+        }
+    }
+}

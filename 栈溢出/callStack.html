@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>调用栈：为什么JavaScript代码会出现栈溢出？</title>
+</head>
+<body>
+<script type="text/javascript">
+	//函数调用栈 
+	var a = 2
+	function add(b,c){
+		return b+c //此处打上断点 函数调用栈结构如下
+		/*add (callStack.html:11)
+		addAll (callStack.html:15)
+		(anonymous) (callStack.html:18)*/
+	}
+	function addAll(b,c){
+	var d = 10
+	result = add(b,c)
+	return  a+result+d
+	}
+	addAll(3,6)
+
+    /*//测试栈的最大容量大小
+	function testStack (n) {
+	  if (n === 0) return 100;
+	  return testStack( n- 1);
+	}
+	testStack(12575) //最大栈大小 即大于 12575 机会报错: callStack.html:20 Uncaught RangeError: Maximum call stack size exceeded*/
+	
+
+	//源代码  会报错栈溢出
+	function runStack (n) {
+		if (n === 0) return 100;
+		return runStack( n- 2);
+	}
+	runStack(50000)
+
+	//[针对源代码]优化代码 --- start 注意： 优化前后的代码[函数]不能同时存在,因为后者会覆盖前者.
+	function runStack (n) {
+		if (n === 0) return 100;
+		return runStack.bind(null, n- 2); // 返回自身的一个版本 null 换作 this 也是正常返回结果100
+		//.bind() 用法: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
+	}
+	// 蹦床函数，避免递归
+	function trampoline(f) {
+		//console.log(f);
+		while (f && f instanceof Function) {
+			f = f();//调用函数, 并重新赋值给变量f, f继续判断条件是否成立
+		}
+		return f;
+	}
+	var ret = trampoline(runStack(1000000))
+	console.log(ret);
+
+	//优化代码 --- end
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<!-- 整体思路：
+JS速度动画, 这里利用left/right的值逐渐变化[借助定时器来实现]来生成一个运动的过程. -->
+<head>
+	<meta charset="utf-8">
+	<title>JS动画效果</title>
+	<style type="text/css">
+		/*清理body的外边距与内边距*/
+		body{
+			margin: 0px;
+			padding: 0px;
+		}
+
+		#div{
+			width: 200px;
+			height: 200px;
+			background: red;
+			position: relative;
+			left: -200px;
+			top: 0px;
+		}
+
+		#share{
+			width: 20px;
+			height: 50px;
+			background: blue;
+			position: absolute; /*相对定位是参考于自身位置，需要另外跟位置参数，如left，top*/
+			left: 200px;
+			top: 75px;
+		}
+	</style>
+
+	<script>
+		window.onload = function (){
+			var oDiv = document.getElementById('div');
+			oDiv.onmouseover = function(){ //鼠标移入事件
+				/*如果一直触发该事件, 会产生多个定时器, 会产生累加效果.
+				解决办法: 触发该事件时,先把之前的定时器[所有的定时器]清除*/
+				startMove(0);
+			}
+			oDiv.onmouseout = function(){//鼠标移出事件
+				startMove(-200);
+			}
+		}
+
+        var timer = null;
+		function startMove(iTarget){
+			clearInterval(timer);
+			timer = setInterval(function(){
+				var oDiv = document.getElementById('div');
+				var left = oDiv.offsetLeft;
+				var speed = 0;
+				if(left > iTarget){
+					speed = -10;
+			    }else{
+					speed = 10;
+				}
+
+				if(left == iTarget){
+					clearInterval(timer);
+				}else{
+					oDiv.style.left = left + speed + 'px';
+				}
+			}, 30);//30ms
+		}
+	</script>
+</head>
+<body>
+	<div id="div">
+		<span id="share">分享</span>
+	</div>
+</body>
+</html>

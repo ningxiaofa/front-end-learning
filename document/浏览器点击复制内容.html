@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>document 节点 - 复制内容</title>
+</head>
+<body>
+	<div id="target">
+		<input id='content' type="text" name="content" value='这是要复制的内容~~'>
+		<input type="button" value="Copy" onclick="doCopy()">
+	</div>
+	<script type="text/javascript">
+
+		function copyText(dom) {
+			var text = dom.value;
+			dom.focus();
+			dom.select();
+
+			// 当前是否有选中文字
+			if (document.queryCommandEnabled('copy')) {
+				var success = document.execCommand('copy');
+				console.log('Copy Ok'); 
+			} else {
+				console.log('queryCommandEnabled is false');
+			}
+		}
+
+		function doCopy(){
+			//浏览器是否支持 copy 命令（选中内容复制到剪贴板）
+			if (document.queryCommandSupported('copy')) {
+				var targetDom = document.getElementById('content');
+				copyText(targetDom);
+			}else{
+				console.log('浏览器不支持');
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>demo</title>
+	<style type="text/css">
+		h2{
+			color: red;
+		}
+		ul.list{
+			color: blue;
+		}
+		ul li{
+			color: green;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function() {
+			var li =  document.getElementsByTagName('li');
+			var showMess = function(event){
+					alert('li 被点击了');
+					//console.log(event);//查看 事件对象 有时浏览器中并不能完整显示, 建议换个浏览器试试 [Chrome/Firefox]					
+					//return;
+					event.cancelBubble = true; //阻止冒泡 方式一
+					//event.stopPropagation(); //阻止冒泡 方式二
+					//备注: ul/body也要阻止冒泡,具体根据业务而定.
+				}
+			for(var i=0; i<li.length; i++){
+				li[i].onclick = showMess;
+			}
+
+			var ul = document.getElementsByClassName('list')[0];
+			var showMess1 = function (event){
+				alert('ul 被点击了');
+			}
+			ul.onclick = showMess1;
+
+
+			var body = document.getElementsByTagName('body')[0];
+			var showMess2 = function (event){
+				alert('body 被点击了');
+			}
+			body.onclick = showMess2;
+
+			var html = document.documentElement;
+			// console.log(document.documentElement);
+			// return;
+			var showMess3 = function(event){
+				alert('html 被点击了');
+			}
+			html.onclick = showMess3;
+			//以上点击li元素, 会依次出现 li / ul / body / html 被点击了
+			
+			return;
+		}
+	</script>
+</head>
+<body>
+<h2>前端开发学习</h2>
+<ul class="list">
+	<li>HTML5</li>
+	<li>CSS3</li>
+	<li>JavaScript</li>
+</ul>
+</body>
+</html>

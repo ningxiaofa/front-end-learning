@@ -1,0 +1,118 @@
+// :root {
+//     font-size: 14px;
+// }
+#content {
+    border: solid 1px red;
+
+    .container {
+        border: blue 1px dashed;
+
+        #new-content {
+            border: 1px red solid;
+            margin-bottom: 8px;
+
+            .row.t-header {
+                border: solid 1px #ff9f43;
+                // background: #FFFFFF;
+
+                // Keep all divs highly consistent
+                display: flex;
+                flex-wrap: wrap;
+                // align-items: stretch;
+
+                [class*=col-] {
+                    // border: dotted 1px green;
+                }
+
+                .upper {
+                    // background:#16a085;
+                    background: #e5e5e5; // 这里是必须的背景色
+                    line-height: 1.22857143;  // 17px;
+                    display: none;
+
+                    padding: 14px 0px 16px;
+                }
+
+                .under {
+                    // background: #6c5ce7;
+                }
+
+                .first-col-under {
+                    // background:#b2bec3;
+                    padding-top: 16px;
+                    padding-bottom: 16px;
+                }
+
+                .t-body-behind {
+                    // border: red solid 1px;
+                    flex: 1;
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    .row {
+                        // border: red solid 1px;
+                        margin: 0px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        flex: 1;
+
+                        .second-col,
+                        .third-col,
+                        .fourth-col
+                        {
+                            display: flex;
+                            flex-direction: column;
+                            flex-wrap: wrap;
+                            // align-items: center;
+                            
+                                .under {
+                                    flex: 1;
+                                    
+                                    display: flex;
+                                    align-items: center;
+                                }
+                        }
+
+                        [class*=col-] {
+                            // border: dotted 1px green;
+
+                            div {
+                                // border: dotted 1px green;
+                            }
+                        }
+
+                        .third-col {
+                            div {
+                                padding-left: 30px;
+                            }
+                        }
+
+                        .fourth-col {
+                            div {
+                                padding-left: 4px;
+                            }
+                        }
+                    }
+                }
+
+                &:first-child {
+                    .upper {
+                        display: flex;
+                    }
+                }
+            }
+
+            .row.credit-info {
+                // background: #16a085;
+                background: #FFF;  // The final background color
+                margin-bottom: 8px;
+                
+                // 主要用于快速实现效果
+                [class*=col-] {
+                    border: dotted 1px green;
+                }
+
+            }
+        }
+    }
+}

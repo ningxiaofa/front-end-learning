@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>防抖动</title>
+	<style type="text/css">
+		textarea{
+			width: 200px;
+			height: 200px;
+		}
+	</style>
+</head>
+<body>
+<div id="someDiv">hello world</div>
+<textarea></textarea>
+
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+(function(){
+	//console.log(window);
+	//var dom = $('#someDiv');
+	//console.log(dom);
+	//return;
+	$('textarea').on('keydown', debounce(ajaxAction, 2500)); //防抖动间隔为2.5s  可以将数值改为0 效果更佳明显
+
+	function debounce(fn, delay){
+	  var timer = null; // 声明计时器
+	  return function() {
+	    var context = this;
+	    var args = arguments;
+	    // console.log(args)
+	    clearTimeout(timer);
+	    timer = setTimeout(function () {
+	      fn.apply(context, args);
+	    }, delay);
+	  };
+	}
+
+	function ajaxAction(para){
+		console.log(para, 'ajaxAction');
+	}
+})()
+
+</script>
+</body>
+</html>

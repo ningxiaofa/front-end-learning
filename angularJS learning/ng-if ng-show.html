@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>  -->
+<script src="https://cdn.staticfile.org/angular.js/1.3.17/angular.min.js"></script> 
+</head>
+<body ng-app="myApp" ng-init="firstName='John'">
+
+<div ng-controller="myCtrl">
+	<!-- 如果使用ng-if/ng-show也是一样 则不会 ng-click中change改变的name在UI上不生效 原因是ng-if会重新执行 -->
+	<p ng-show="test()">{{ name }} test here</p>
+	<p>名字: <input ng-model="name"></p>
+	<button ng-click="change()">click</button>
+</div>
+
+<script>
+	var app = angular.module('myApp', []);
+	app.controller('myCtrl', function($scope){
+		$scope.name = 'williamning';
+		console.log($scope.name);
+
+
+		$scope.test = function(){
+			console.log('test - 1');
+			// $scope.name = 'william';
+			console.log('test() here');
+			return true;
+		};
+
+		$scope.change = function(){
+			$scope.name = 'william123';
+			console.log($scope.name);
+		};
+
+		console.log('end');
+	});
+
+	app.run(function ($timeout) {//等待AngularJS加载完成之后触发事件
+	    var a = $timeout(function () {
+	        // alert('williamning');
+	        console.log('run williamning');
+	    }, 1000);
+	});
+</script>
+
+</body>
+	</html>

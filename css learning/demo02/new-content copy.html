@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Order History Page</title>
+    <link rel="stylesheet" href="new-content.css" />
+  </head>
+  <body>
+    <div id="content" class="content-panel">
+        <div ng-view="" class="ng-scope"><div class="container ng-scope" ng-controller="OrderHistoryController">
+            <!--// TOP BAR //-->
+            <div class="panel topbar">
+                <div class="panel-body">
+                    <div class="topbar-heading">
+                        <div class="topbar-title">
+                            <h1 class="ng-binding">Order History</h1>
+                        </div>
+                    </div>
+        
+                    <div class="topbar-action pull-right">
+                        <a id="btnPurchaseCredit" ng-href="#/store/promopackages?product_id=1" ng-click="trackingForPurchase()" class="btn btn-primary ng-isolate-scope" ss-user-permission="#toggle.online_purchase" ss-translate-once="ORDER_LABEL_PURCHASE_CREDITS" href="#/store/promopackages?product_id=1">Purchase Credits</a>
+                    </div>
+                    <ul class="nav nav-pills pull-right">
+                        <li class="active"><a href="#/order-history" ng-bind="'ORDER_LABEL_ORDER_HISTORY' | translate" class="ng-binding">Order History</a></li>
+                        <li><a href="#/credits" ng-bind="'ORDER_LABEL_CREDIT_USAGE' | translate" class="ng-binding">Credit Usage</a></li>
+                        <li><a href="#/pending-payments" ss-user-permission="#toggle.online_purchase" ng-bind="'ORDER_LABEL_PENDING_PAYMENT' | translate" class="ng-binding ng-isolate-scope">Pending Payment</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--// TOP BAR END //-->
+        
+
+            
+            <!--// NEW CONTENT //-->
+            <div id="new-content" ng-if="hasRecords()" style="border: 1px red solid;" class="ng-scope">
+                New Content Here.
+            </div>
+            <!--// NEW CONTENT END //-->
+
+        
+            <!--PAGINATOR-->
+            <div class="col-xs-12 ng-scope" ng-if="hasRecords()">
+                <div class="panel panel-clear">
+                    <div ss-paginator-config="paginator" class="ng-isolate-scope">
+                        <!-- Page-jump input field -->
+                        <div class="pull-right">
+                            <ul class="pagination">
+                                <!-- List of pages -->
+                                <!-- ngIf: paginator.currentPage !== 1 -->
+                            </ul>
+                            <ul class="pagination">
+                                <!-- ngIf: paginator.currentPage !== 1 -->
+                                <!-- ngRepeat: page in paginator.displayedPages --><!-- ngIf: paginator.displayedPageNumbers !== 0 --><li ng-if="paginator.displayedPageNumbers !== 0" ng-repeat="page in paginator.displayedPages" ng-class="{active: page == paginator.currentPage }" class="ng-scope active">
+                                    <a id="linkPage1" style="cursor: pointer" ng-click="paginator.triggerSearch(page)" class="ng-binding">
+                                        1
+                                    </a>
+                                </li><!-- end ngIf: paginator.displayedPageNumbers !== 0 --><!-- end ngRepeat: page in paginator.displayedPages -->
+                                <!-- ngIf: paginator.displayedPageNumbers === 0 && paginator.currentPage !== 1 -->
+                                <!-- ngIf: paginator.currentPage * paginator.displayedDataNumbers < paginator.totalRecords -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+           
+            <!--/// END CONTENT ///-->
+        </div>
+    </div>
+    </div>
+  </body>
+</html>

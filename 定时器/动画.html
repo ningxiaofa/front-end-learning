@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>动画</title>
+	<style type="text/css">
+		#someDiv{
+			background-color: red;
+			width: 100%;
+			height: calc(100vh);
+			opacity: 0;
+		}
+	</style>
+</head>
+<body>
+<div id="someDiv">hello world</div>
+
+<script>
+(function(){
+	var div = document.getElementById('someDiv');
+	var opacity = 0;
+	var fader = setInterval(function() {
+	  opacity += 0.05;
+	  if (opacity <= 1) {
+	    div.style.opacity = opacity;
+	  } else {
+	    clearInterval(fader);
+	  }
+	}, 100);
+})();
+</script>
+</body>
+</html>

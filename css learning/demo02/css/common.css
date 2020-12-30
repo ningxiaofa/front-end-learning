@@ -1,0 +1,38 @@
+#content .container #new-content div {
+  padding: 0px;
+  margin: 0px;
+}
+#content .container #new-content .row.t-header {
+  font-family: HelveticaNeue-Bold;
+  border: solid 1px #34495e;
+  background: #FFF;
+}
+#content .container #new-content .row.t-header .upper {
+  background: #16a085;
+}
+#content .container #new-content .row.t-header .upper div {
+  padding-left: 12px;
+}
+#content .container #new-content .row.t-header .under {
+  background: #f39c12;
+}
+#content .container #new-content .row.t-header .first-col-under {
+  padding-left: 12px;
+}
+#content .container #new-content .row.t-header .first-col-under .invoice-no {
+  font-size: 12px;
+  line-height: 1.5;
+  font-family: HelveticaNeue;
+  color: #666;
+  letter-spacing: 0;
+}
+#content .container #new-content .row.t-header .first-col-under :first-child {
+  margin-bottom: 4px;
+}
+#content .container #new-content .row.credit-info {
+  background: #FFF;
+  margin-bottom: 8px;
+}
+#content .container #new-content .row.credit-info [class*=col-] {
+  border: dotted 1px green;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+</head>
+<body>
+<script type="text/javascript">
+	alert('bb');
+	var a = [0];
+	a[50] = 50;
+	console.log(a);
+	console.log(a.length);
+	var arr = a.filter(function(ele){
+		return !!ele || ele === 0;
+	});
+	console.log(arr.length);
+	
+	//方式二
+	function countTwo(value){
+	var type = typeof value;
+	if(type == 'string'){
+		return value.length;
+	}else if(type == 'object'){
+		var type = value instanceof Array;
+		if(type){
+			return value.filter(function(ele){
+				return !!ele || ele == 0;
+			}).length;
+		}
+		return Object.getOwnPropertyNames(value).length;
+	}
+	return false;
+	
+	//方式一
+	function count(o){
+	    var t = typeof o;
+	    if(t == 'string'){
+	        return o.length;
+	    }else if(t == 'object'){
+	        var n = 0; 
+	        for(var i in o){
+	            n++;
+	        }
+	        return n;
+	    }
+	    return false;
+	}
+}
+	
+</script>
+</body>
+</html>

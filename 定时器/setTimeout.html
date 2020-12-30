@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>可以调整事件的发生顺序/用户自定义的回调函数，通常在浏览器的默认动作之前触发</title>
+	<style type="text/css">
+		textarea{
+			width: 200px;
+			height: 200px;
+		}
+	</style>
+</head>
+<body>
+<div id="someDiv">hello world</div>
+<input type="button" id="myButton" value="click">
+<input type="text" id="input-box">
+
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+(function(){
+
+	//1.可以调整事件的发生顺序[这里目标是先执行父级元素的事件,然后执行子元素的事件]
+	// var input = document.getElementById('myButton');
+
+	// input.onclick = function A() {
+	//   setTimeout(function B() {
+	//     input.value +=' input';
+	//   }, 0)
+	// };
+
+	// document.body.onclick = function C() {
+	//   input.value += ' body'  //先执行父级元素的事件
+	// };
+
+
+	//2.用户自定义的回调函数，通常在浏览器的默认动作之前触发  -- 想在用户每次输入文本后，立即将字符转为大写
+	document.getElementById('input-box').onkeypress = function (event) {
+	  //this.value = this.value.toUpperCase();  //这种写法, 只能让前面输入的字母大写, 最后一个可能还是输入时的样子
+
+	  //改写如下:
+	  var self = this;
+	  setTimeout(function() {
+	    self.value = self.value.toUpperCase();
+	  }, 0);
+	}
+
+	//3.那些计算量大、耗时长的任务，常常会被放到几个小部分，分别放到setTimeout(f, 0)里面执行
+	var div = document.getElementsByTagName('div')[0];
+	// console.log(div);
+
+	// 写法一 //会看到阻塞 浏览器刷新图标一直在打转
+	// for (var i = 0xFFFFFF; i > 0xA00000; i--) {  
+	//   div.style.backgroundColor = '#' + i.toString(16); //可以转换为 rgb(160, 0, 1)形式
+	// }
+
+
+	// 写法二  //会看到没有阻塞 浏览器刷新图标没有打转, 而且可以看到页面上颜色的渐变效果
+	var timer;
+	var i=0x100000;
+
+	function func() {
+	  timer = setTimeout(func, 0);
+	  div.style.backgroundColor = '#' + i.toString(16);
+	  if (i++ == 0xFFFFFF) clearTimeout(timer);
+	}
+
+	timer = setTimeout(func, 0);
+
+
+	//4.另一个使用这种技巧的例子是代码高亮的处理。如果代码块很大，一次性处理，可能会对性能造成很大的压力，那么将其分成一个个小块，一次处理一块，比如写成setTimeout(highlightNext, 50)的样子，性能压力就会减轻。
+
+})()
+
+</script>
+</body>
+</html>

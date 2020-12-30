@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>datetime demo</title>
+    <script src="./moment.min.js"></script>
+</head>
+<body>
+    please see the console of dveTools.
+    <script>
+        let datetime = '2020-08-09T00:00:00+08:00'; //UTC
+        let ret = datetime < moment().format();
+        console.log('datetime < moment().format():', ret);
+    </script>
+</body>
+</html>

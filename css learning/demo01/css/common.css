@@ -1,0 +1,7 @@
+#app a {
+    text-decoration: none;
+}
+
+#app a:hover {
+    background: blue;
+}

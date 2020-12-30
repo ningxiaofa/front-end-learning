@@ -1,0 +1,26 @@
+#content {
+  border: solid 1px red;
+}
+#content .container {
+  border: blue 1px dashed;
+}
+#content .container #new-content {
+  border: 1px red solid;
+  margin-bottom: 8px;
+}
+#content .container #new-content .row.t-header {
+  border: solid 1px #34495e;
+}
+#content .container #new-content .row.t-header .upper {
+  background: #16a085;
+}
+#content .container #new-content .row.t-header .under {
+  padding-top: 27px;
+}
+#content .container #new-content .row.t-header .under-first-col {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+#content .container #new-content .row > [class*=col-] {
+  border: dotted 1px green;
+}

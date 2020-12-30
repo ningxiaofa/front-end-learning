@@ -1,0 +1,66 @@
+#content {
+  border: solid 1px red;
+}
+#content .container {
+  border: blue 1px dashed;
+}
+#content .container #new-content {
+  border: 1px red solid;
+  margin-bottom: 8px;
+}
+#content .container #new-content .row.t-header {
+  border: solid 1px #ff9f43;
+  display: flex;
+  flex-wrap: wrap;
+}
+#content .container #new-content .row.t-header .upper {
+  background: #e5e5e5;
+  line-height: 1.22857143;
+  display: none;
+  padding: 14px 0px 16px;
+}
+#content .container #new-content .row.t-header .first-col-under {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+#content .container #new-content .row.t-header .t-body-behind {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+#content .container #new-content .row.t-header .t-body-behind .row {
+  margin: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+}
+#content .container #new-content .row.t-header .t-body-behind .row .second-col,
+#content .container #new-content .row.t-header .t-body-behind .row .third-col,
+#content .container #new-content .row.t-header .t-body-behind .row .fourth-col {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+#content .container #new-content .row.t-header .t-body-behind .row .second-col .under,
+#content .container #new-content .row.t-header .t-body-behind .row .third-col .under,
+#content .container #new-content .row.t-header .t-body-behind .row .fourth-col .under {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+#content .container #new-content .row.t-header .t-body-behind .row .third-col div {
+  padding-left: 30px;
+}
+#content .container #new-content .row.t-header .t-body-behind .row .fourth-col div {
+  padding-left: 4px;
+}
+#content .container #new-content .row.t-header:first-child .upper {
+  display: flex;
+}
+#content .container #new-content .row.credit-info {
+  background: #FFF;
+  margin-bottom: 8px;
+}
+#content .container #new-content .row.credit-info [class*=col-] {
+  border: dotted 1px green;
+}

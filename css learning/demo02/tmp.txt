@@ -1,0 +1,235 @@
+
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link
+      rel="stylesheet"
+      href="bootstrap-3.3.7-dist\css\bootstrap.min.css"
+    />
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link
+      rel="stylesheet"
+      href="bootstrap-3.3.7-dist\css\bootstrap-theme.min.css"
+    />
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件, 只是样式布局，没必要引入以及jQuery -->
+    <script
+      src="bootstrap-3.3.7-dist\js\bootstrap.min.js"
+    ></script>
+
+
+
+    <div class="col-sm-5">
+                        Monthly Lite Ad package
+                    </div>
+                    <div class="col-sm-2">
+                        25 Jul 2020
+                    </div>
+                    <div class="col-sm-2">
+                        25 Aug 2020
+                    </div>
+                    <div class="col-sm-3">
+                        MYKLINV/2993817
+                    </div>
+
+                    <div class="col-sm-5">
+                        Packages with a very very long long name that dont need to go 2 lines
+                        Packages with a very very long long name that dont need to go 2 lines
+                    </div>
+                    <div class="col-sm-2">
+                        16 Jul 2020
+                    </div>
+                    <div class="col-sm-2">
+                        16 Aug 2020
+                    </div>
+                    <div class="col-sm-3">
+                        MYKLINV/2377661
+                    </div>
+
+                    <div class="col-sm-5">
+                        10 Country Job Posting Package - (FY21-2)
+                    </div>
+                    <div class="col-sm-2">
+                        13 Jul 2020
+                    </div>
+                    <div class="col-sm-2">
+                        13 Jul 2020
+                    </div>
+                    <div class="col-sm-3">
+                        MYKLINV/2817726
+                    </div>
+
+
+
+
+// *:before, *:after {
+//     -webkit-box-sizing: border-box;
+//     box-sizing: border-box;
+// }
+
+// // :root 即 html
+// :root {
+//     font-size: 10px;
+//     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    
+//     body {
+//         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+//         font-size: 14px;
+//         line-height: 1.42857143;
+//         color: #333333;
+//         background-color: #e5e5e5;
+//     }
+// }
+
+
+// 使用js [jquery] 去做
+$('.col-xs-8').css("height", $('.col-xs-4').height());
+
+
+// div居中显示
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+
+
+// version 3 布局方式
+<!-- 表头 -->
+                    <div class="row t-header">
+                        <!-- 表主体 -->
+                        <div class="col-sm-5 col-xs-12">
+                            <!-- 第1列 -->
+                            <div class="upper">
+                                <div>Package name</div>
+                            </div>
+                            <div class="first-col-under">
+                                Monthly Lite Ad package
+                                <!-- <span>MYKLSOR/1928837</span> -->
+                                <div class="invoice-no">MYKLSOR/1928837</div>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-xs-6 second-col">
+                            <!-- 第2列 -->
+                            <div class="upper">Order date</div>
+                            <div class="under">29 Jul 2020</div>
+                        </div>
+                        <div class="col-sm-2 col-xs-6 third-col">
+                            <!-- 第3列 -->
+                            <div class="upper">Expiry date</div>
+                            <div class="under">29 Jul 2020</div>
+                        </div>
+                        <div class="col-sm-3 col-xs-12 fourth-col">
+                            <!-- 第4列 -->
+                            <div class="upper">Invoice no.</div>
+                            <div class="under">MYKLINV/2993817</div>
+                        </div>
+                        <!-- 表主体 end-->
+                    </div>
+                    <!-- 表头 end -->
+
+                    <!-- 表头 -->
+                    <div class="row t-header">
+                        <!-- 表主体 -->
+                        <div class="col-sm-5 col-xs-12">
+                            <!-- 第1列 -->
+                            <div class="upper">
+                                <div>
+                                    Package name
+                                </div>
+                            </div>
+                            <div class="first-col-under">
+                                Packages with a very very long long name that dont need to go 2 lines
+                                Packages with a very very long long name that dont need to go 2 lines
+                                <div class="invoice-no">MYKLSOR/1928837</div>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-xs-6 second-col">
+                            <!-- 第2列 -->
+                            <div class="upper">Order date</div>
+                            <div class="under">29 Jul 2020</div>
+                        </div>
+                        <div class="col-sm-2 col-xs-6 third-col">
+                            <!-- 第3列 -->
+                            <div class="upper">Expiry date</div>
+                            <div class="under">29 Jul 2020</div>
+                        </div>
+                        <div class="col-sm-3 col-xs-12 fourth-col">
+                            <!-- 第4列 -->
+                            <div class="upper">Invoice no.</div>
+                            <div class="under">MYKLINV/2993817</div>
+                        </div>
+                        <!-- 表主体 end-->
+                    </div>
+                    <!-- 表头 end -->
+
+
+
+
+
+添加credit info
+                    <div class="unit">
+                        <!-- Table Header -->
+                        <div class="row t-header">
+                            <!-- Table Body -->
+                        <div class="col-sm-6 col-xs-12 first-col">
+                            <!-- 第1列 -->
+                            <div class="upper">
+                                <div>Package name</div>
+                            </div>
+                            <div class="first-col-under">
+                                <div>10 Job Posting Package - (FY21-2)</div>
+                                <div class="invoice-no">MYKLSOR/1928837</div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-6 t-body-behind">
+                            <div class="row">
+                                <div class="col-sm-3 col-xs-6 second-col">
+                                    <!-- 第2列 -->
+                                    <div class="upper">Order date</div>
+                                    <div class="under">
+                                        29 Jul 2020
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 col-xs-6 third-col">
+                                    <!-- 第3列 -->
+                                    <div class="upper">Expiry date</div>
+                                    <div class="under">
+                                        29 Jul 2020
+                                    </div>
+                                </div>
+                                <div class="col-sm-5 col-xs-12 fourth-col">
+                                    <!-- 第4列 -->
+                                    <div class="upper">Invoice no.</div>
+                                    <div class="under">
+                                        MYKLINV/2993817
+                                    </div>
+                                </div>
+                                <!-- Table Body End -->
+                            </div>
+                        </div>
+                        </div>
+
+                        <!-- Credit Info -->
+                        <div class="row credit-info">
+                        <div class="col-sm-4">
+                            <div class="col-xs-12">Credit types</div>
+                            <div class="col-xs-12">Credit balance</div>
+                        </div>
+                        </div>
+                        <!-- Credit Info End -->
+                        <!-- Table Header End -->
+                    </div>
+
+
+
+                    <div class="row credit-info">
+                    <div class="col-sm-4 col-xs-12">
+                        <div class="col-sm-5 col-xs-6">
+                            <!-- header -->
+                            <div>Credit types</div>
+                        </div>
+                        <div class="col-sm-6 col-xs-6">
+                            <!-- body -->
+                            <div>Credit balance</div>
+                        </div>
+                    </div>
+                </div>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>测试break语句</title>
+</head>
+<body>
+	<script type="text/javascript">
+		console.log('return before');
+		if(true){
+			return;
+		}
+		console.log('return after');
+		
+		//1.while 循环
+		function testBreak(x) {
+			var i = 0;
+
+			while (i < 6) {
+			if (i == 3) {
+			  break;
+			}
+			i += 1;
+			}
+
+			return i * x;
+		}
+
+		var ret = testBreak(6);
+		console.log(ret);//18
+
+		//2.for 循环 只适用于数组
+		function testFor(arr){
+			for(var i=0; i<arr.length; i++){
+				if(i==2){
+					console.log('进入if语句');
+					//break;//终止了for循环语句
+					return;//整个函数直接返回结果,终止return之后语句的执行
+				}
+				console.log("下标为%d的元素值为%d" ,i ,arr[i]);
+			}
+			console.log('for循环之后的语句');//依然可以执行
+		}
+
+		var arr = [1,2,3,4];
+		var ret = testFor(arr);
+		console.log(ret);//undefined
+
+
+		var testObj = {
+			name: 'williamning',
+			age: 27
+		};
+		console.log(testObj);//正常打印
+		// testObj.forEach(function(val,key, testObj){
+		// 	console.log(val);
+		// })
+
+		arr.forEach(function(ele){
+			if(ele == 3){
+				return true;// return/return false/return true; 效果都是一样的,跳过本次循环
+				// continue; //报错
+				// break; //报错
+			}
+			console.log(ele);
+		});
+		console.log('forEach之后的语句');
+
+
+
+	</script>
+</body>
+</html>
+关于docker容器化技术的介绍, 以及docker的学习和使用, 实际项目中的应用实践, 帮助了解, 学习, 应用docker进行项目的开发.

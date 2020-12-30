@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>多个div高度保持一致</title>
+	<style type="text/css">
+		#parent {
+			color: #fff;
+			width: 1140px;
+			margin: 0px auto;
+			border: 1px solid rgb(0, 184, 148);
+			/*background: rgb(0, 184, 148);*/
+
+			/*高度是未知的, 也就是由[高度最大的]子元素决定该元素高度, 注意, 如果某个子元素高度是人为定义写死的, 自然不会有变化*/
+			
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+
+		.child {
+			/*border: 1px solid red;*/
+			display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+		}
+
+		.child:nth-child(1) {
+			border: 1px solid rgb(253, 203, 110);
+			background: rgb(253, 203, 110);
+			width: 100px;
+		}
+
+		.child:nth-child(2) {
+			border: 1px solid rgb(162, 155, 254);
+			background: rgb(162, 155, 254);
+			width: 200px;
+		}
+
+		.child:nth-child(3) {
+			border: 1px solid rgb(45, 52, 54);
+			background: rgb(45, 52, 54);
+			width: 300px;
+		}
+
+		.grandchild {
+			border: 1px solid rgb(9, 132, 227);
+			flex: 1;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="parent">
+		<div class="child">
+			<div class="grandchild">
+				<!-- 这里内容都是动态的, 并没有认为将高度定死 -->
+				<p>1111111111</p>
+				<p>1111111111</p>
+				<p>1111111111</p>
+				<p>1111111111</p>
+				<p>1111111111</p>
+				<p>1111111111</p>
+			</div>
+		</div>
+		<div class="child">
+			<div class="grandchild">
+				<p>22222222</p>
+			</div>
+		</div>
+		<div class="child">
+			<div class="grandchild">
+				<p>33333333</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

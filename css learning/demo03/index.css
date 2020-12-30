@@ -1,0 +1,34 @@
+:root {
+    font-size: 14px;
+}
+
+body {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+#app > .container > .row{
+    /* border: 1px #333 solid; */
+    display: flex;
+    flex-wrap: wrap;
+    /* 让各个div高度保持一致, 可不写 因为flex-wrap: wrap; */
+    /* align-items: stretch; */
+    /* 垂直居中 */
+    /* align-items: center; */
+}
+
+#app [class*=col-] {
+    background: red;
+}
+
+#app [class*=col-]:nth-child(1) {
+    background: #fd79a8;
+}
+
+#app [class*=col-]:nth-child(2) {
+    background: yellow;
+}
+
+#app [class*=col-]:nth-child(3) {
+    background: #636e72;
+}
