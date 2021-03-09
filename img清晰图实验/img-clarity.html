@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>img图片清晰度实验</title>
+</head>
+<body>
+	<h3>img标签省略style width和height属性</h3>
+	<div style="color: rgb(255, 234, 167)">
+		浏览器缩小至80%时截图, 大小尺寸: 94x58
+		<img src="./imgs/80%.png">
+	</div>
+	<div style="color: rgb(250, 177, 160)">
+		浏览器正常100%时截图, 大小尺寸: 119x71
+		<img src="./imgs/100%.png">
+	</div>
+	<div style="color: rgb(255, 118, 117)">
+		浏览器放大至150%时截图, 大小尺寸: 176x104
+		<img src="./imgs/150%.png">
+	</div>
+	<div style="color: rgb(253, 121, 168)">
+		浏览器缩小至175%时截图, 大小尺寸: 204x124
+		<img src="./imgs/175%.png">
+	</div>
+
+	<hr />
+	
+	<h3>img标签加上style width和height属性, 保持width与height属性值与原图大小一致</h3>
+	<div style="color: rgb(255, 234, 167)">
+		浏览器缩小至80%时截图, 大小尺寸: 94x58
+		<img src="./imgs/80%.png" style="width: 94px; height: 58px">
+	</div>
+	<div style="color: rgb(250, 177, 160)">
+		浏览器正常100%时截图, 大小尺寸: 119x71
+		<img src="./imgs/100%.png" style="width: 119px; height: 71px">
+	</div>
+	<div style="color: rgb(255, 118, 117)">
+		浏览器放大至150%时截图, 大小尺寸: 176x104
+		<img src="./imgs/150%.png" style="width: 176px; height: 104px">
+	</div>
+	<div style="color: rgb(253, 121, 168)">
+		浏览器缩小至175%时截图, 大小尺寸: 204x124
+		<img src="./imgs/175%.png" style="width: 204px; height: 124px">
+	</div>
+
+	<hr />
+
+	<h3>img标签加上style width和height属性, 使得width与height属性值大于原图大小, 为原来图片的宽高两倍, 如果宽高不是等比例放大, 则会变形</h3>
+	<div style="color: rgb(255, 234, 167)">
+		浏览器缩小至80%时截图, 大小尺寸: 94x58
+		<img src="./imgs/80%.png" style="width: 188px; height: 116px">
+	</div>
+	<div style="color: rgb(250, 177, 160)">
+		浏览器正常100%时截图, 大小尺寸: 119x71
+		<img src="./imgs/100%.png" style="width: 238px; height: 142px">
+	</div>
+	<div style="color: rgb(255, 118, 117)">
+		浏览器放大至150%时截图, 大小尺寸: 176x104
+		<img src="./imgs/150%.png" style="width: 352px; height: 208px">
+	</div>
+	<div style="color: rgb(253, 121, 168)">
+		浏览器缩小至175%时截图, 大小尺寸: 204x124
+		<img src="./imgs/175%.png" style="width: 408px; height: 248px">
+	</div>
+
+	<hr />
+
+	<h3>img标签加上style width和height属性, 使得width与height属性值小于原图大小, 为原来图片的宽高1/2, 如果宽高不是等比例缩小, 则会变形</h3>
+	<div style="color: rgb(255, 234, 167)">
+		浏览器缩小至80%时截图, 大小尺寸: 94x58
+		<img src="./imgs/80%.png" style="width: 47px; height: 29px">
+	</div>
+	<div style="color: rgb(250, 177, 160)">
+		浏览器正常100%时截图, 大小尺寸: 119x71
+		<img src="./imgs/100%.png" style="width: 59.5px; height: 35.5px">
+	</div>
+	<div style="color: rgb(255, 118, 117)">
+		浏览器放大至150%时截图, 大小尺寸: 176x104
+		<img src="./imgs/150%.png" style="width: 88px; height: 52px">
+	</div>
+	<div style="color: rgb(253, 121, 168)">
+		浏览器缩小至175%时截图, 大小尺寸: 204x124
+		<img src="./imgs/175%.png" style="width: 102px; height: 62px">
+	</div>
+
+	<h1 style="color: rgb(225, 112, 85)">
+		从上可以看出: 
+		<br>
+		1. 省略style中的width与height, 最终效果还是原始大小, 但是建议写上width/height, 如果设置了这些属性，就可以在页面加载时为图像预留空间。如果没有这些属性，浏览器就无法了解图像的尺寸，也就无法为图像保留合适的空间，因此当图像加载时，页面的布局就会发生变化
+		更多详情参考: <a href="https://www.w3school.com.cn/tags/att_img_height-width.asp">HTML img 标签的 height 和 width 属性</a>
+		<br>
+		<br>
+		2.应该尽量在原始图片上处理, 然后在web页面上使用图片原本的图片尺寸大小.
+		<br>
+		<br>
+		3. 至于img属性width/height 与 style中的width/height的区别TBD
+	</h1>
+	<br>
+</body>
+</html>
