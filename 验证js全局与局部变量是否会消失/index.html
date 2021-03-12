@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS全局/局部变量是否会消失在页面关闭之前</title>
+</head>
+<body>
+	<div>请打开控制台查看输出信息</div>
+	<button onclick="print()">点击button, 查看全局变量是否还存在</button>
+
+	<h3 style="color: red">实践整明: js全局变量是会一直存在整页声明周期的, 局部变量在失去其作用域, 数据便会丢失, 变量被会回收</h3>
+	<script type="text/javascript">
+		let name = 'william';
+		const objInfo = {
+			name: 'williamning',
+			age: 27
+		};
+		console.log('初始化信息:', name, objInfo);
+
+		function print(){
+			name =  'william-->williamning';
+			objInfo.age = 28;
+
+			console.log('after click, changed info:', name, objInfo);
+
+
+			let localname; // 每次都是重新定义个变量, 每次调用函数 testLocalVar之后, 修改localName的值, 在下一次执行print函数会丢失
+
+			if(localname){
+				console.log('函数内局部变量值:', localname);
+			}else{
+				localname = testLocalVar();
+				console.log('函数内局部变量消失:', localname);
+			}
+		}
+
+		function testLocalVar(){
+			let localName = 'local-william';
+
+			return localName;
+		}
+
+
+	</script>
+</body>
+</html>
